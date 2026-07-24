@@ -349,6 +349,8 @@ section { padding: 84px 0; }
   font-size: 1.3rem;
   margin-bottom: 12px;
 }
+.site-footer p, .site-footer li { color: rgba(251, 246, 236, 0.72); }
+.site-footer a:hover { color: var(--gold-light); }
 .footer-col h4 {
   color: var(--gold-light);
   font-size: 0.85rem;
