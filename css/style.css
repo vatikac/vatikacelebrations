@@ -187,26 +187,20 @@ img, svg { max-width: 100%; display: block; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding: 90px 0 60px;
-  overflow: hidden;
+  padding: 100px 0 56px;
   background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-deep) 100%);
 }
-.hero-arch {
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(900px, 92vw);
-  opacity: 0.9;
-  pointer-events: none;
+.hero-motif {
+  display: block;
+  width: min(220px, 46vw);
+  margin: 34px auto 0;
+  opacity: 0.85;
 }
 .hero-inner {
-  position: relative;
-  z-index: 2;
   text-align: center;
   max-width: 760px;
   margin: 0 auto;
-  padding: 0 24px 140px;
+  padding: 0 24px;
 }
 .hero-actions {
   display: flex;
@@ -215,16 +209,32 @@ img, svg { max-width: 100%; display: block; }
   margin-top: 30px;
   flex-wrap: wrap;
 }
+.stats-band {
+  background: var(--ivory-deep);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 40px 0;
+}
 .hero-facts {
   display: flex;
   justify-content: center;
-  gap: 48px;
-  margin-top: 56px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
 }
-.hero-fact { text-align: center; }
+.hero-fact {
+  text-align: center;
+  padding: 0 52px;
+  position: relative;
+}
+.hero-fact:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 38px;
+  background: var(--line);
+}
 .hero-fact strong {
   display: block;
   font-family: var(--display);
@@ -236,6 +246,9 @@ img, svg { max-width: 100%; display: block; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--ink-soft);
+}
+@media (max-width: 560px) {
+  .hero-fact { padding: 0 24px; }
 }
 
 /* ---------- Sections ---------- */
@@ -335,6 +348,9 @@ section { padding: 84px 0; }
   background: var(--forest-deep);
   color: rgba(251, 246, 236, 0.7);
   padding: 56px 0 28px;
+}
+.site-footer p {
+  color: rgba(251, 246, 236, 0.7);
 }
 .footer-top {
   display: grid;
